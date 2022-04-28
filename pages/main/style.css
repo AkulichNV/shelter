@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Georgia Regular"),
+         url("/shelter/assets/fonts/Georgia\ Regular.ttf") format("ttf"),
+  }
+  
+  body {
+    font-family: "Georgia", serif;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #5B483A, #262425);
+  }
