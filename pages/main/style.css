@@ -11,6 +11,7 @@
     --color-primary: #F1CDB3;
     --color-light-xl: #FFFFFF;
     --color-dark-s: #CDCDCD;
+    --color-dark-3xl: #292929;
     --color-light-s: #FAFAFA;
     --georgia: "Georgia", serif;
     --font1: 32px;
@@ -18,27 +19,23 @@
     --font3: 15px;
   }
   
+  *, ::before, ::after {
+    box-sizing: inherit;
+  }
   body {
     font-family: Arial, sans-serif; 
   }
   .container {
     max-width: 1280px;
-    width: calc(100%);
     margin: 0 auto;
     padding-left: 40px;
     padding-right: 40px;
   }
-  header {
-    background: var(--gradient);
-    padding-top: 60px;
-  }
   .header-container {
-    background-repeat: no-repeat;
-    background-position: center 0;
     display: flex;
     flex-direction: row;
     justify-content: start;
-    /* margin-top: 60px; */
+    margin-top: 60px;
   }
   .logo-tittle {
     font-family: var(--georgia);
@@ -86,4 +83,43 @@
     text-decoration-thickness: 3px;
     color: var(--color-light-s);
   }
-
+  .start-content {
+    background: var(--gradient);
+    margin-top: -142px;
+  }
+  .start-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-top: 142px;
+  }
+  .head-content {
+    width: 460px;
+    padding-top: 163px;
+  }
+  .start-tittle {
+      font-family: var(--georgia);
+      font-size: 44px;
+      color: var(--color-light-xl);
+      font-weight: 400;
+      line-height: 130%;
+      margin-top: 0;
+      width: 310px;
+  }
+  .start-subtittle {
+      font-size: var(--font3);
+      color: var(--color-dark-s);
+  }
+  .button-primary {
+      background-color: var(--color-primary);
+      font-family: var(--georgia);
+      font-size: 17px;
+      color: var(--color-dark-3xl);
+      width: 207px;
+      height: 52px;
+      border-radius: 100px;
+  }
+  .head-puppy {
+      width: 698px;
+      height: 728px;
+  }
