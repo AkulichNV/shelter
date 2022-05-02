@@ -3,7 +3,7 @@
     font-style: normal;
     font-weight: 400;
     src: local("Georgia Regular"),
-         url("/shelter/assets/fonts/Georgia\ Regular.ttf") format("ttf"),
+         url("/shelter/assets/fonts/Georgia.ttf") format("ttf"),
   }
 
   :root {
@@ -418,6 +418,7 @@
     flex-direction: row;
     gap: 160px;
     justify-content: flex-start;
+    /* padding-right: 30px; */
   }
   .contacts-footer, .location-footer {
     margin-top: 16px;
