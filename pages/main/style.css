@@ -28,14 +28,16 @@
   *, ::before, ::after {
     box-sizing: inherit;
   }
-  /* h1, h2, h3, h4, h5, h6, p {
+  h1, h2, h3, h4, h5, h6, p {
     margin: 0;
-  } */
+  }
   body {
     font-family: Arial, sans-serif; 
+    position: relative;
   }
   .container {
-    max-width: 1280px;
+    position: relative;
+    max-width: 1200px;
     margin: 0 auto;
     padding-left: 40px;
     padding-right: 40px;
@@ -43,8 +45,10 @@
   .header-container {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 60px;
+    
   }
   .logo-tittle {
     font-family: var(--georgia);
@@ -60,10 +64,12 @@
     color: var(--color-light-xl);
     line-height: 15px;
     letter-spacing: 0.1em;
-    margin: 0;
+    margin-top: 10px;
+    margin-left: 4px;
   }
   .nav {
-    margin-left: auto;
+    margin-left: 40px;
+    /* border: 1px solid white; */
   }
   .nav-list {
     display: flex;
@@ -72,6 +78,7 @@
     align-self: center;
     list-style: none;
     gap: 35px;
+    margin: 0;
   }
   .nav-link {
     line-height: 50px;
@@ -87,9 +94,8 @@
     color: var(--color-light-s);
   }
   .active {
-    text-decoration-line: underline;
-    text-decoration-color: var(--color-primary);
-    text-decoration-thickness: 3px;
+    border-bottom: 3px solid var(--color-primary); 
+    padding-bottom: 3px;
     color: var(--color-light-s);
   }
   .start-section {
@@ -338,4 +344,46 @@
     font-size: 12px;
     line-height: 18px;
     color: var(--color-dark-m);
+  }
+
+  .footer-section {
+    background: var(--gradient);
+  }
+  .footer-container {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 160px;
+    justify-content: flex-start;
+  }
+  .contacts-footer, .location-footer {
+    margin-top: 16px;
+    /* width: 278px; */
+  }
+  .footer-tittle {
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-light-xl);
+  }
+  .email, .phone, .location {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 10px 15px;*/
+    margin: 0px; 
+  }
+  .footer-text {
+    font-family: var(--georgia);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: var(--color-primary);
+  }
+  .img-footer {
+    width: 300px;
+    height: 310px;
   }
