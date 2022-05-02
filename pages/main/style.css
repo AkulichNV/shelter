@@ -176,6 +176,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 80px;
+    padding-bottom: 100px;
   }
   .pets-slider {
     display: flex;
@@ -233,4 +234,50 @@
     color: var(--color-dark-3xl);
     width: 187px;
     height: 52px;
+  }
+  
+  /* ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+} */
+  .help-section {
+    background-color: var(--color-light-xl);
+  }
+  .help-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+  .help-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-left: 87px;
+    margin-right: 87px;
+    gap: 120px;
+    row-gap: 55px;
+    grid-template-rows: auto;
+    text-align: center;
+  }
+  .help-item {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  .help-text {
+    font-family: var(--georgia);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
+    margin: 0;
   }
