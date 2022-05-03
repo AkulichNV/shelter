@@ -146,6 +146,8 @@
     background-color: var(--color-primary);
     font-family: var(--georgia);
     font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
     color: var(--color-dark-3xl);
     height: 51px;
     border-radius: 100px;
