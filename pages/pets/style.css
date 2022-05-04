@@ -82,6 +82,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 60px;
+    padding-bottom: 30px;
     background-color: var(--color-light-xl);
   }
   .logo {
@@ -138,4 +139,97 @@
     border-bottom: 3px solid var(--color-primary); 
     padding-bottom: 3px;
     color: var(--color-dark-l);
+  }
+  .pets-section {
+    background-color: var(--color-light-l);
+}
+.pets-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+.pets-tittle {
+  text-align: center;
+}
+.pets-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .card {
+    background-color: var(--color-light-s);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 9px;
+    padding-bottom: 30px;
+    cursor: pointer;
+  }
+  .card:hover {
+    background-color: var(--color-light-xl);
+  }
+  .card:hover .button-secondary {
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
+  }
+  .name-card {
+    font-family: var(--georgia);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
+  }
+  .button-secondary {
+    background-color: var(--color-light-s);
+    border: 2px solid var(--color-primary);
+    box-sizing: border-box;
+    border-radius: 100px;
+    font-family: var(--georgia);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-3xl);
+    width: 187px;
+    height: 52px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .button-paginator {
+    height: 52px;
+    width: 52px;
+    background-color: var(--color-light-l);
+    border: 2px solid var(--color-primary);
+    box-sizing: border-box;
+    border-radius: 100px;
+    color: var(--color-dark-3xl);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .button-paginator:hover {
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
+  }
+  .pets-navigation > .active {
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
+  }
+  .pets-navigation > .inactive {
+    border: 2px solid var(--color-dark-s);
+
+  }
+  .pets-navigation > .inactive > h4 {
+    color: var(--color-dark-s);
   }
