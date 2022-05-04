@@ -19,10 +19,6 @@
     --color-light-l: #F6F6F6;
     --color-light-xl: #FFFFFF;
     --georgia: "Georgia", serif;
-    --font1: 32px;
-    --font2: 13px;
-    --font3: 15px;
-    --font4: 35px;
   }
   
   html {
@@ -37,6 +33,41 @@
   body {
     font-family: Arial, sans-serif; 
     position: relative;
+  }
+  h2 {
+    font-family: var(--georgia);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 130%;
+    color: var(--color-dark-l);
+  }
+  h3 {
+    font-family: var(--georgia);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
+  }
+  h4 {
+    font-family: var(--georgia);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
+  }
+  h5 {
+    font-family: var(--georgia);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
   }
   .container {
     position: relative;
@@ -60,7 +91,7 @@
   }
   .logo-tittle {
     font-family: var(--georgia);
-    font-size: var(--font1);
+    font-size: 32px;
     color: var(--color-primary);
     font-weight: 400;
     line-height: 110%;
@@ -68,7 +99,7 @@
     margin: 0;
   }
   .logo-subtittle {
-    font-size: var(--font2);
+    font-size: 13px;
     color: var(--color-light-xl);
     line-height: 15px;
     letter-spacing: 0.1em;
@@ -95,7 +126,7 @@
     transition: color 0.3s;
     font-style: normal;
     font-weight: 400;
-    font-size: var(--font3);
+    font-size: 15px;
     line-height: 50px;
     color: var(--color-dark-s);
     
@@ -128,16 +159,10 @@
     padding-top: 163px;
   }
   .start-tittle {
-    font-family: var(--georgia);
-    font-size: 44px;
     color: var(--color-light-xl);
-    font-weight: 400;
-    line-height: 130%;
-    margin-top: 0;
-    width: 310px;
   }
   .start-subtittle {
-    font-size: var(--font3);
+    font-size: 15px;
     font-weight: 400;
     line-height: 160%;
     color: var(--color-dark-s);
@@ -190,19 +215,10 @@
       padding-top: 14px;
       padding-bottom: 112px;
   }
-  h3 {
-    font-family: var(--georgia);
+   .about-subtittle {
     font-style: normal;
     font-weight: 400;
-    font-size: var(--font4);
-    line-height: 130%;
-    color: var(--color-dark-l);
-    letter-spacing: 0.06em;
-  }
-  .about-subtittle {
-    font-style: normal;
-    font-weight: 400;
-    font-size: var(--font3);
+    font-size: 15px;
     line-height: 160%;
     color: var(--color-dark-xl);
     margin-top: 25px;
@@ -337,16 +353,6 @@
     justify-content: center;
     align-items: center;
   }
-  .help-text {
-    font-family: var(--georgia);
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 115%;
-    letter-spacing: 0.06em;
-    color: var(--color-dark-l);
-    margin: 0;
-  }
   .donation-section {
     background-color: var(--color-light-l);
   }
@@ -367,13 +373,6 @@
     width: 380px;
   }
   .donation-subtittle {
-    font-family: var(--georgia);
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 110%;
-    letter-spacing: 0.06em;
-    color: var(--color-dark-l);
     margin-top: 20px;
   }
   .credit-card {
@@ -391,16 +390,6 @@
   }
   .credit-card:hover {
     background-color: var(--color-primary-light);
-  }
-  .credit-card-number {
-    font-family: var(--georgia);
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 115%;
-    letter-spacing: 0.06em;
-    color: var(--color-dark-l);
-    margin: 0px;
   }
   .credit-card-info {
     font-style: italic;
