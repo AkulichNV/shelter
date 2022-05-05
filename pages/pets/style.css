@@ -81,7 +81,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 60px;
+    padding-top: 30px;
     padding-bottom: 30px;
     background-color: var(--color-light-xl);
   }
@@ -160,6 +160,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 40px;
+    row-gap: 30px;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -207,7 +208,12 @@
     transition: 0.3s;
     cursor: pointer;
   }
-  .button-paginator {
+  .pets-navigation {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  .button-paginator, .button-paginator-right, .button-paginator-left {
     height: 52px;
     width: 52px;
     background-color: var(--color-light-l);
@@ -218,20 +224,20 @@
     transition: 0.3s;
     cursor: pointer;
   }
-  .button-paginator:hover {
+  .button-paginator-left:disabled {
+    border: 2px solid var(--color-dark-s);
+    cursor: default;
+  }
+  .pets-navigation > .button-paginator-left:disabled > h4 {
+    color: var(--color-dark-s);
+  }
+  .button-paginator-right:hover {
     background-color: var(--color-primary-light);
     border: 2px solid var(--color-primary-light);
   }
   .pets-navigation > .active {
     background-color: var(--color-primary-light);
     border: 2px solid var(--color-primary-light);
-  }
-  .pets-navigation > .inactive {
-    border: 2px solid var(--color-dark-s);
-
-  }
-  .pets-navigation > .inactive > h4 {
-    color: var(--color-dark-s);
   }
 
   .footer-section {
