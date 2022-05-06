@@ -33,6 +33,8 @@
   body {
     font-family: Arial, sans-serif; 
     position: relative;
+    overflow-x: hidden;
+    margin: 0;
   }
   h2 {
     font-family: var(--georgia);
