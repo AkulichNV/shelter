@@ -404,6 +404,7 @@
 
   .footer-section {
     background-image: url("/shelter/assets/images/footer-gradient-background.png"), var(--gradient);
+    overflow-y: hidden;
   }
   .footer-container {
     padding-top: 40px;
