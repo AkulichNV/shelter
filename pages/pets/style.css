@@ -33,6 +33,8 @@
   body {
     font-family: Arial, sans-serif; 
     position: relative;
+    overflow-x: hidden;
+    margin: 0;
   }
   h2 {
     font-family: var(--georgia);
@@ -108,9 +110,7 @@
     margin-left: 4px;
   }
   .nav {
-    margin-left: 40px;
     z-index: 1;
-    /* border: 1px solid white; */
   }
   .nav-list {
     display: flex;
@@ -118,7 +118,7 @@
     align-items: center;
     align-self: center;
     list-style: none;
-    gap: 35px;
+    gap: 36px;
     margin: 0;
   }
   .nav-link {
@@ -138,7 +138,7 @@
   .active {
     border-bottom: 3px solid var(--color-primary); 
     padding-bottom: 3px;
-    color: var(--color-dark-l);
+    color: var(--color-dark-3xl);
   }
   .pets-section {
     background-color: var(--color-light-l);
@@ -224,6 +224,11 @@
     transition: 0.3s;
     cursor: pointer;
   }
+  .button-paginator {
+    cursor: default;
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
+  }
   .button-paginator-left:disabled {
     border: 2px solid var(--color-dark-s);
     cursor: default;
@@ -235,28 +240,25 @@
     background-color: var(--color-primary-light);
     border: 2px solid var(--color-primary-light);
   }
-  .pets-navigation > .active {
-    background-color: var(--color-primary-light);
-    border: 2px solid var(--color-primary-light);
-  }
 
   .footer-section {
     background-image: url("/shelter/assets/images/footer-gradient-background.png"), var(--gradient);
+    overflow-y: hidden;
   }
   .footer-container {
     padding-top: 40px;
     display: flex;
     flex-direction: row;
     gap: 160px;
-    justify-content: flex-start;
-    /* padding-right: 30px; */
+    justify-content: space-between;
   }
   .contacts-footer, .location-footer {
-    margin-top: 16px;
+    margin-top: 15px;
+  }
+  .location-footer {
+    margin-left: -8px;
   }
   .footer-tittle {
-    line-height: 130%;
-    letter-spacing: 0.06em;
     color: var(--color-light-xl);
   }
   .email, .phone, .location {
@@ -265,15 +267,14 @@
     gap: 20px;
     justify-content: flex-start;
     align-items: center;
-    /* padding: 10px 15px;*/
     margin: 0px; 
     margin-top: 40px;
   }
   .location1 {
-    margin-top: 34px;
+    margin-top: 31px;
   }
   .location2 {
-    margin-top: 32px;
+    margin-top: 33px;
   }
   .footer-text {
     font-family: var(--georgia);
@@ -291,4 +292,5 @@
   .img-footer {
     width: 300px;
     height: 310px;
+    margin-right: 5x;
   }
