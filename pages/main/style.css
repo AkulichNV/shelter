@@ -110,6 +110,9 @@
     margin-top: 10px;
     margin-left: 4px;
   }
+  .hamburger {
+    display: none;
+  }
   .nav {
     z-index: 1;
   }
@@ -430,6 +433,7 @@
   }
   .footer-tittle {
     color: var(--color-light-xl);
+    width: 280px;
   }
   .email, .phone, .location {
     display: flex;
@@ -462,7 +466,7 @@
   }
   .img-footer {
     width: 300px;
-    height: 310px;
+    /* height: 310px; */
   }
 
    @media (min-width: 768px) and (max-width: 1279px) {
@@ -534,3 +538,226 @@
       margin-top: 32px;
     }
   } 
+
+  @media (max-width: 768px) {
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      width: 30px;
+      /* height: 22px; */
+      cursor: pointer;
+      /* user-select: none; */
+      z-index: 2;
+      /* margin-top: 15px; */
+      /* margin-right: 59px; */
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+    .line {
+      width: 30px;
+      height: 2px;
+      background: var(--color-primary);
+      z-index: 15;
+      transition: all 0.3s ease-in-out;
+    }
+    .hamburger.open {
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+    .nav-list {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      top: 0;
+      padding-top: 134px;
+      right: -625px;
+      width: 620px;
+      background-color: #000000;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: calc(100vh - 90px);
+      transition: right 0.5s ease-in;
+      gap: 0;
+    }
+    .nav-list.open {
+      position: fixed;
+      right: 0;
+      width: 620px;
+      height: 100%;
+    }
+    .nav-item { 
+      opacity: 1;
+      margin-left: 127px;
+      margin-bottom: 16px;
+    } 
+
+
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .header-container {
+      padding-left: 3%;
+      padding-right: 16.5%;
+      margin-top: 30px;
+      
+    }
+    .start-container {
+      justify-content: flex-end;
+      padding-top: 11.5%;
+    }
+     .start-tittle, h3 {
+      font-size: 25px;
+      text-align: center;
+      letter-spacing: 0.06em; 
+      line-height: 130%;
+     }
+     .start-subtittle {
+       padding-left: 3%;
+       padding-right: 3%;
+       text-align: center;
+     }
+    .head-content > .button-primary {
+      margin: auto;
+    } 
+    .head-puppy {
+      /* min-width: 569px;  */
+      max-width: 80.4%;
+      padding-right: 3%;
+      margin-top: 34%;
+    } 
+    .about-container {
+      padding-top: 9%;
+      padding-left: 8%;
+      padding-right: 8%;
+      row-gap: 0px;
+      padding-bottom: 13%;
+    }
+    .about-content {
+      text-align: justify;
+      padding-bottom: 15%;
+    }
+    .about-subtittle {
+    margin-top: 8.7%;
+    }
+    .about-pets {
+      width: 97%;
+    }
+    .pets-container {
+      padding-top: 13.1%;
+      padding-bottom: 14%;
+      gap: 40px;
+    }
+   
+    .pets-slider {
+      justify-content: center;
+      flex-wrap: wrap-reverse;
+      gap: 80px;
+      row-gap: 20px;
+    }
+    .pets-cards {
+      order: 1;
+      gap: 0px;
+    }
+    .card:nth-child(2), .card:nth-child(3) {
+      display: none;
+    }
+    .help-container {
+      padding-top: 13.1%;
+      padding-bottom: 13.1%;
+      gap: 40px;
+    }
+    .help-list {
+      justify-content: space-around;
+      gap: 0;
+      row-gap: 30px;
+    }
+    .help-item:last-child {
+      margin-right: auto;
+      padding-left: 16px;
+    }
+    .help-item {
+      gap: 20px;
+      width: 40%
+    }
+    .help-item > img {
+       width: 50px; /* 60% */
+    }
+    h4 {
+      font-size: 15px;
+    }
+    .donation-container {
+      padding-top: 13.1%; 
+      padding-bottom: 13.1%;
+      /* padding: 13.1% 5%; */
+    }
+    .donation-content {
+      width: 100%;
+    }
+    .donation-dog {
+      width: 81%;
+      margin-top: 4.4%;
+    }
+    .donation-subtittle {
+      margin-top: 18px;
+    }
+    h5 {
+      line-height: 160%;
+      letter-spacing: normal;
+      text-align: center;
+    }
+    .credit-card {
+      margin-left: 19px;
+      margin-right: 20px;
+    }
+    .credit-card-info {
+      padding: 0 6.5%;
+      text-align: justify;
+    }
+    .footer-container {
+      justify-content: center;
+      /* gap: 45px; */
+      row-gap: 24px;
+      padding: 12px 13px 0 12px;
+    }
+    .footer-tittle {
+      margin: 0 3px;
+    }
+    .contacts-footer {
+      /* margin-left: -8px; */
+    }
+    .email{
+      margin-left: 21px;
+    } 
+    .phone {
+      margin-left: 27px;
+    }
+    .location-footer {
+      margin: 0;
+      padding: 0;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 40px;
+    }
+    .location {
+      margin-top: 0;
+    }
+    .img-footer {
+      margin-top: 14px;
+      width: 88%;
+    }
+  }
