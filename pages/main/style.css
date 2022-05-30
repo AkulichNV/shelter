@@ -214,6 +214,7 @@
       gap: 120px;
       justify-content: center;
       padding-top: 80px;
+      padding-bottom: 100px;
   }
   .about-pets {
       width: 300px;
@@ -222,7 +223,7 @@
   .about-content {
       width: 430px;
       padding-top: 14px;
-      padding-bottom: 112px;
+      
   }
    .about-subtittle {
     font-style: normal;
@@ -501,7 +502,7 @@
     .about-container {
       padding-top: 65px;
       row-gap: 0px;
-      padding-bottom: 95px;
+      padding-bottom: 98px;
     }
     .about-content {
       padding-bottom: 80px;
@@ -543,7 +544,7 @@
     }
   } 
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     html, body {
       overflow-x: hidden;
       width: 100%;
