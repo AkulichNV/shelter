@@ -35,6 +35,7 @@
     position: relative;
     overflow-x: hidden;
     margin: 0;
+    /* width: 100%; */
   }
   h2 {
     font-family: var(--georgia);
@@ -81,6 +82,7 @@
   .header-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-top: 60px;
@@ -108,12 +110,16 @@
     margin-top: 10px;
     margin-left: 4px;
   }
+  .hamburger {
+    display: none;
+  }
   .nav {
     z-index: 1;
   }
   .nav-list {
     display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
     align-items: center;
     align-self: center;
     list-style: none;
@@ -148,6 +154,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       padding-top: 202px;
+      overflow-x: hidden;
   }
   .head-content {
     display: flex;
@@ -194,21 +201,23 @@
   }
   .head-puppy {
       width: 698px;
-      height: 728px;
+      max-width: 100%;
+      /* min-width: ; */
+      /* height: 728px; */
   }
   .about-section {
       background-color: var(--color-light-xl);
   }
   .about-container {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: wrap-reverse;
       gap: 120px;
       justify-content: center;
       padding-top: 80px;
   }
   .about-pets {
       width: 300px;
-      height: 408;
+      /* height: 408; */
   }
   .about-content {
       width: 430px;
@@ -235,6 +244,7 @@
     align-items: center;
     padding-top: 80px;
     padding-bottom: 100px;
+    overflow-x: hidden;
   }
   .pets-tittle {
     text-align: center;
@@ -242,20 +252,24 @@
   .pets-slider {
     display: flex;
     flex-direction: row;
-    gap: 52px;
+    /* flex-wrap: wrap; */
+    gap: 50px;
     justify-content: space-between;
     align-items: center;
   }
   .button-arrow {
-    height: 52px;
-    width: 52px;
+    height: 50px;
+    width: 50px;
+    flex-shrink: 0;
     background-color: var(--color-light-l);
     border: 2px solid var(--color-primary);
-    box-sizing: border-box;
-    border-radius: 100px;
+    /* box-sizing: border-box; */
+    border-radius: 50%;
     color: var(--color-dark-3xl);
     transition: 0.3s;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
   }
   .button-arrow:hover {
     background-color: var(--color-primary-light);
@@ -264,6 +278,7 @@
   .pets-cards {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 90px;
     justify-content: space-between;
     align-items: flex-start;
@@ -355,6 +370,7 @@
   .donation-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap-reverse;
     gap: 30px;
     justify-content: center;
     align-items: center;
@@ -363,7 +379,7 @@
   }
   .donation-dog {
     width: 505px;
-    height: 261;
+    /* height: 261; */
   }
   .donation-content {
     width: 380px;
@@ -404,7 +420,9 @@
     padding-top: 40px;
     display: flex;
     flex-direction: row;
-    gap: 160px;
+    flex-wrap: wrap;
+    /* gap: 160px; */
+    grid-template-rows: auto;
     justify-content: space-between;
   }
   .contacts-footer, .location-footer {
@@ -415,6 +433,7 @@
   }
   .footer-tittle {
     color: var(--color-light-xl);
+    width: 280px;
   }
   .email, .phone, .location {
     display: flex;
@@ -447,5 +466,307 @@
   }
   .img-footer {
     width: 300px;
-    height: 310px;
+    /* min-width: 260px; */
+    /* height: 310px; */
+  }
+  /* .img-footer > img {
+    width: 100%;
+  } */
+
+   @media (min-width: 768px) and (max-width: 1279px) {
+    .container {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .header-container {
+      margin-top: 30px;
+    }
+    .start-container {
+      justify-content: flex-end;
+      padding-top: 40px;
+      row-gap: 100px;
+    }
+    .head-content{
+      margin-right: 124px;
+      margin-left: 124px;
+      width: 100%;
+     }
+    .head-content > .button-primary {
+      margin: auto;
+    } 
+    .head-puppy {
+      /* min-width: 569px;  */
+      max-width: 80.4%;
+    } 
+    .about-container {
+      padding-top: 65px;
+      row-gap: 0px;
+      padding-bottom: 95px;
+    }
+    .about-content {
+      padding-bottom: 80px;
+    }
+    .pets-slider {
+      gap: 10px;
+    }
+    .pets-cards {
+      gap: 40px;
+    }
+    .card:nth-child(3) {
+      display: none;
+    }
+    .help-list {
+      /* align-content: stretch; */
+      /* grid-template-rows: none; */
+      gap: 0px;
+      row-gap: 55px;
+      margin: 0 10px;
+    }
+    .help-item {
+      /* border: 1px solid blue; */
+      width: 33.3%
+    }
+    .donation-dog {
+      margin-top: 28px;
+    }
+    .footer-container {
+      justify-content: center;
+      gap: 67px;
+      row-gap: 65px;
+      padding-top: 15px;
+    }
+    .contacts-footer {
+      margin-left: -8px;
+    }
+    .location1 {
+      margin-top: 32px;
+    }
+  } 
+
+  @media (max-width: 768px) {
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      width: 30px;
+      /* height: 22px; */
+      cursor: pointer;
+      /* user-select: none; */
+      z-index: 2;
+      /* margin-top: 15px; */
+      /* margin-right: 59px; */
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+    .line {
+      width: 30px;
+      height: 2px;
+      background: var(--color-primary);
+      z-index: 15;
+      transition: all 0.3s ease-in-out;
+    }
+    .hamburger.open {
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+    .nav-list {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      top: 0;
+      padding-top: 134px;
+      right: -625px;
+      width: 620px;
+      background-color: #000000;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: calc(100vh - 90px);
+      transition: right 0.5s ease-in;
+      gap: 0;
+    }
+    .nav-list.open {
+      position: fixed;
+      right: 0;
+      width: 620px;
+      height: 100%;
+    }
+    .nav-item { 
+      opacity: 1;
+      margin-left: 127px;
+      margin-bottom: 16px;
+    } 
+
+
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .header-container {
+      padding-left: 3%;
+      padding-right: 16.5%;
+      margin-top: 30px;
+      
+    }
+    .start-container {
+      justify-content: center;
+      padding-top: 11.5%;
+      
+    
+    }
+     .start-tittle, h3 {
+      font-size: 25px;
+      text-align: center;
+      letter-spacing: 0.06em; 
+      line-height: 130%;
+     }
+     .start-subtittle {
+       padding-left: 3%;
+       padding-right: 3%;
+       text-align: center;
+     }
+    .head-content > .button-primary {
+      margin: auto;
+    } 
+    .head-puppy {
+      /* min-width: 569px;  */
+      min-width: 260px;
+      padding-right: 3%;
+      /* margin-left: auto; */
+      padding-left: 50px;
+      margin-top: 105px; /* 34% */
+    } 
+    .about-container {
+      padding-top: 9%;
+      padding-left: 8%;
+      padding-right: 8%;
+      row-gap: 0px;
+      padding-bottom: 13%;
+    }
+    .about-content {
+      text-align: justify;
+      padding-bottom: 15%;
+    }
+    .about-subtittle {
+    margin-top: 8.7%;
+    }
+    .about-pets {
+      /* width: 97%; */
+      min-width: 260px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .pets-container {
+      padding-top: 13.1%;
+      padding-bottom: 13.1%;
+      gap: 42px;
+    }
+   
+    .pets-slider {
+      justify-content: center;
+      flex-wrap: wrap-reverse;
+      gap: 80px;
+      row-gap: 20px;
+    }
+    .pets-cards {
+      order: 1;
+      gap: 0px;
+    }
+    .card:nth-child(2), .card:nth-child(3) {
+      display: none;
+    }
+    .help-container {
+      padding-top: 13.1%;
+      padding-bottom: 13.1%;
+      gap: 40px;
+    }
+    .help-list {
+      justify-content: space-around;
+      gap: 0;
+      row-gap: 30px;
+    }
+    .help-item:last-child {
+      margin-right: auto;
+      padding-left: 16px;
+    }
+    .help-item {
+      gap: 20px;
+      width: 40%
+    }
+    .help-item > img {
+       width: 50px; /* 60% */
+    }
+    h4 {
+      font-size: 15px;
+    }
+    .donation-container {
+      padding-top: 13.1%; 
+      padding-bottom: 13.1%;
+      /* padding: 13.1% 5%; */
+    }
+    
+    .donation-dog {
+      /* width: 81%; */
+      min-width: 260px;
+      padding: 4% 30px 0 30px;
+      /* margin-top: 4.4%; */
+    }
+    .donation-subtittle {
+      margin-top: 18px;
+    }
+    h5 {
+      line-height: 160%;
+      letter-spacing: normal;
+      text-align: center;
+    }
+    .credit-card {
+      margin-left: 19px;
+      margin-right: 20px;
+    }
+    .credit-card-info {
+      padding: 0 6.5%;
+      text-align: justify;
+    }
+    .footer-container {
+      justify-content: center;
+      /* gap: 45px; */
+      row-gap: 23px;
+      padding: 14px 13px 0 7px;
+    }
+    .footer-tittle {
+      margin: 0 0 0 10px;
+    }
+    .email{
+      margin-left: 21px;
+    } 
+    .phone {
+      margin-left: 27px;
+    }
+    .location-footer {
+      margin: 0;
+      padding: 0;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 40px;
+    }
+    .location {
+      margin-top: 0;
+    }
+    .img-footer {
+      /* margin-top: 14px; */
+      padding: 17px 25px 0 30px;
+      min-width: 260px;
+    }
   }
