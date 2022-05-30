@@ -466,8 +466,12 @@
   }
   .img-footer {
     width: 300px;
+    /* min-width: 260px; */
     /* height: 310px; */
   }
+  /* .img-footer > img {
+    width: 100%;
+  } */
 
    @media (min-width: 768px) and (max-width: 1279px) {
     .container {
@@ -615,8 +619,10 @@
       
     }
     .start-container {
-      justify-content: flex-end;
+      justify-content: center;
       padding-top: 11.5%;
+      
+    
     }
      .start-tittle, h3 {
       font-size: 25px;
@@ -634,9 +640,11 @@
     } 
     .head-puppy {
       /* min-width: 569px;  */
-      max-width: 80.4%;
+      min-width: 260px;
       padding-right: 3%;
-      margin-top: 34%;
+      /* margin-left: auto; */
+      padding-left: 50px;
+      margin-top: 105px; /* 34% */
     } 
     .about-container {
       padding-top: 9%;
@@ -653,12 +661,15 @@
     margin-top: 8.7%;
     }
     .about-pets {
-      width: 97%;
+      /* width: 97%; */
+      min-width: 260px;
+      padding-left: 30px;
+      padding-right: 30px;
     }
     .pets-container {
       padding-top: 13.1%;
-      padding-bottom: 14%;
-      gap: 40px;
+      padding-bottom: 13.1%;
+      gap: 42px;
     }
    
     .pets-slider {
@@ -703,12 +714,12 @@
       padding-bottom: 13.1%;
       /* padding: 13.1% 5%; */
     }
-    .donation-content {
-      width: 100%;
-    }
+    
     .donation-dog {
-      width: 81%;
-      margin-top: 4.4%;
+      /* width: 81%; */
+      min-width: 260px;
+      padding: 4% 30px 0 30px;
+      /* margin-top: 4.4%; */
     }
     .donation-subtittle {
       margin-top: 18px;
@@ -729,14 +740,11 @@
     .footer-container {
       justify-content: center;
       /* gap: 45px; */
-      row-gap: 24px;
-      padding: 12px 13px 0 12px;
+      row-gap: 23px;
+      padding: 14px 13px 0 7px;
     }
     .footer-tittle {
-      margin: 0 3px;
-    }
-    .contacts-footer {
-      /* margin-left: -8px; */
+      margin: 0 0 0 10px;
     }
     .email{
       margin-left: 21px;
@@ -757,7 +765,8 @@
       margin-top: 0;
     }
     .img-footer {
-      margin-top: 14px;
-      width: 88%;
+      /* margin-top: 14px; */
+      padding: 17px 25px 0 30px;
+      min-width: 260px;
     }
   }
