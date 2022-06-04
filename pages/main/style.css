@@ -285,6 +285,9 @@
     align-items: flex-start;
   }
   .card {
+    display: none;
+  }
+  .card.show {
     background-color: var(--color-light-s);
     display: flex;
     flex-direction: column;
@@ -513,9 +516,9 @@
     .pets-cards {
       gap: 40px;
     }
-    .card:nth-child(3) {
+    /* .card:nth-child(3) {
       display: none;
-    }
+    } */
     .help-list {
       /* align-content: stretch; */
       /* grid-template-rows: none; */
@@ -711,9 +714,9 @@
       order: 1;
       gap: 0px;
     }
-    .card:nth-child(2), .card:nth-child(3) {
+    /* .card:nth-child(2), .card:nth-child(3) {
       display: none;
-    }
+    } */
     .help-container {
       padding-top: 13.1%;
       padding-bottom: 13.1%;
