@@ -21,7 +21,7 @@ function closeMenu(event) {
 hamburger.addEventListener('click', toggleMenu);
 navList.addEventListener('click', closeMenu);
 
-// Carousel
+
  
 // shuffle array by Fisher–Yates shuffle  
 
@@ -52,9 +52,8 @@ fetch('/shelter/assets/scripts/pets.json')
 
             //shuffle order of pets.json
             shuffle(data);
-            // console.log(data);
 
-            //create cards with pets
+            //create cards with pets for caruosel
             var count = countCards();
             var petsCards = document.querySelector('.pets-cards');
             for (let i = 0; i < data.length; i++) {
@@ -70,6 +69,38 @@ fetch('/shelter/assets/scripts/pets.json')
 
                 // displays only the first cards with pets according width screen
                 if (i > count-1) { cardDiv.classList.remove('show');}
+
+                // Popup
+
+                document.getElementById(`i-${i}`).addEventListener("click", showmodal);
+                
+                // base layout
+                let popupDiv = document.createElement('div');
+                    popupDiv.id = `pop-${i}`;
+                    popupDiv.className = "modal";
+                    
+                    popupDiv.insertAdjacentHTML("afterbegin", `<img class="popup-img" alt=${data[i].type}-${data[i].name} src=${data[i].img}>`);
+
+                // description of pet
+                let contentDiv = document.createElement('div');
+                    contentDiv.className = "pets-content";
+
+                    contentDiv.insertAdjacentHTML("beforeend", `<h3 class="popup-name">${data[i].name}</h3>`);
+                    contentDiv.insertAdjacentHTML("beforeend", `<h4 class="popup-type">${data[i].type} - ${data[i].breed}</h4>`);
+                    contentDiv.insertAdjacentHTML("beforeend", `<h5 class="popup-description">${data[i].description}</h5>`);
+                    var ulLi = `<ul class="popup-extra"><li><strong>Age:</strong> ${data[i].age}</li> <li><strong>Inoculations:</strong> ${data[i].inoculations}</li> <li><strong>Diseases:</strong> ${data[i].diseases}</li> <li><strong>Parasites:</strong> ${data[i].parasites}</li></ul>`
+                    contentDiv.insertAdjacentHTML("beforeend", ulLi);
+
+                    // button close
+                let close = document.createElement("span");
+                    close.className = "modal-js-close";
+                    close.id = `${i}`;
+                    close.innerHTML = "<img src='/shelter/assets/icons/Vector.svg' alt='close' />";
+
+                popupDiv.append(contentDiv);
+                popupDiv.append(close);
+                document.body.append(popupDiv);
+                
             }
             
         })
@@ -94,7 +125,6 @@ function turnLeft() {
 
 // show cards
 function showCard(a) {
-    // console.log(a);
     var cardShow = [...document.querySelectorAll('.show')];
     var cards = [...document.querySelectorAll('.card')];
 
@@ -113,12 +143,11 @@ function showCard(a) {
 
     } else {
         //left arrow
-
         // first card with pet to show
         var start = index - count;
         (start < 0) ? start = start + cards.length : start;
     }
-    
+
     // last card to show
     var end = start + count - 1;
     (end >= cards.length) ? end = end - cards.length : end;
@@ -153,4 +182,36 @@ function countCards() {
         count = 1;
     }
     return count;
+}
+
+// open and close popup
+function modalOnOff(id, e) {
+    var numId = parseInt(id.match(/\d+/));
+    var popId = "pop-" + numId; 
+
+    let popEl = document.getElementById(popId);
+    popEl.classList.add("on");
+
+    let body = document.querySelector("body");
+    let close = popEl.querySelector(".modal-js-close");
+    let bg = document.createElement("div");
+    bg.className = "modal-js-overlay";
+    body.appendChild(bg);
+
+    // delete popup to click on grey zone
+    bg.addEventListener("click", (e) => { 
+        body.removeChild(bg);
+        popEl.classList.remove('on');
+    });
+
+    // close button in popup
+    close.addEventListener('click', (e) => {
+        popEl.classList.remove('on');
+        body.removeChild(bg);
+        
+    });
+}
+
+function showmodal(e)  {
+    modalOnOff(this.id, e);
 }
