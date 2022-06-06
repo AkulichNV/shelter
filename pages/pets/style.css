@@ -109,6 +109,9 @@
     margin-top: 10px;
     margin-left: 4px;
   }
+  .hamburger {
+    display: none;
+  }
   .nav {
     z-index: 1;
     margin-left: auto;
@@ -141,6 +144,10 @@
     padding-bottom: 3px;
     color: var(--color-dark-3xl);
   }
+
+
+
+  /* Pets Section */
   .pets-section {
     background-color: var(--color-light-l);
 }
@@ -357,9 +364,13 @@
       height: 2px;
       background: #000000;
       z-index: 15;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
     .hamburger.open {
+      
+      position: absolute;
+      right: 56px;
+      top: 49px;
       -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
       -o-transform: rotate(90deg);
@@ -369,29 +380,52 @@
       position: absolute;
       margin: 0;
       padding: 0;
-      top: 0;
-      padding-top: 134px;
-      right: -625px;
-      width: 620px;
-      background-color: #000000;
+      top: -30px; /*?????*/
+      padding-top: 248px;
+      right: -325px;
+      width: 320px;
+      background-color: var(--color-light-l);
       flex-direction: column;
       justify-content: flex-start;
-      align-items: flex-start;
-      height: calc(100vh - 90px);
-      transition: right 0.5s ease-in;
-      gap: 0;
+      align-items: center;
+      height: 100vh;
+      transition: right 0.1s ease-in;
+      gap: 41px;
     }
     .nav-list.open {
-      position: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      position: absolute;
       right: 0;
-      width: 620px;
-      height: 100%;
+      width: 320px;
+      height: 515px;
+      top: -30px;
     }
-    .nav-item { 
+    .nav-link { 
       opacity: 1;
-      margin-left: 127px;
+      margin-left: -2px;
       margin-bottom: 16px;
+      /* top: 0; */
+      font-family: 'Arial';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 160%;
+
     } 
+    .active {
+      padding-bottom: 7px;
+    }
+    .logo.open {
+      z-index: 10;
+      position: absolute;
+      right: 126px;
+      top: 30px;
+      /* margin-right: 0; */
+      transition: all 0.5s ease-in-out;
+    }
 
 
     .container {
