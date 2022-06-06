@@ -192,6 +192,8 @@ function modalOnOff(id, e) {
     let popEl = document.getElementById(popId);
     popEl.classList.add("on");
 
+    document.body.classList.add("stop-scrolling");
+
     let body = document.querySelector("body");
     let close = popEl.querySelector(".modal-js-close");
     let bg = document.createElement("div");
@@ -202,16 +204,18 @@ function modalOnOff(id, e) {
     bg.addEventListener("click", (e) => { 
         body.removeChild(bg);
         popEl.classList.remove('on');
+        document.body.classList.remove("stop-scrolling");
     });
 
     // close button in popup
     close.addEventListener('click', (e) => {
         popEl.classList.remove('on');
         body.removeChild(bg);
+        document.body.classList.remove("stop-scrolling");
         
     });
 }
 
-function showmodal(e)  {
-    modalOnOff(this.id, e);
+function showmodal()  {
+    modalOnOff(this.id);
 }

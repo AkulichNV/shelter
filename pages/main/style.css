@@ -23,6 +23,7 @@
   
   html {
     scroll-behavior: smooth; 
+    scrollbar-width: none;
   }
   *, ::before, ::after {
     box-sizing: inherit;
@@ -366,6 +367,7 @@
     height: 1000px;
     z-index: 20000;
     left: 0px;
+    overflow-y: hidden;
   }
   .modal-js-close {
     position: absolute;
@@ -382,6 +384,10 @@
   }
   .modal-js-close:hover {
     background: var(--color-primary);
+  }
+  .stop-scrolling {
+    height: 100%;
+    overflow: hidden;
   }
   .popup-img {
     height: 100%;
