@@ -1,23 +1,38 @@
-// open and close burger menu
-
+// burger menu
 const hamburger = document.querySelector('.hamburger');
 const navList = document.querySelector('.nav-list');
-const logo = document.querySelector('.logo');
+const logo = document.querySelector('.header-container');
 
+let body = document.querySelector("body");
+let bg = document.createElement("div");
+    bg.className = "overlay";
+let overlay = document.getElementsByClassName("overlay");
+
+    // delete popup to click on grey zone
+    bg.addEventListener("click", (e) => {
+        navList.classList.remove('open');
+        hamburger.classList.remove('open');
+        logo.classList.remove('open'); 
+        body.removeChild(bg);
+        document.body.classList.remove("stop-scroll");
+    });
+
+// open and close burger menu
 function toggleMenu() {
     navList.classList.toggle('open');
     hamburger.classList.toggle('open');
     logo.classList.toggle('open');
+    if (overlay.length == 0) {
+        body.appendChild(bg);
+        document.body.classList.add("stop-scroll");
+    } else if (overlay.length > 0) {
+        body.removeChild(bg);
+        document.body.classList.remove("stop-scroll");
+    }
+
 }
-function closeMenu(event) {
-    if (event.target.classList.contains('nav-link')) {
-        navList.classList.remove('open');
-        hamburger.classList.remove('open');
-        logo.classList.remove('open');
-      }
-}
+
 hamburger.addEventListener('click', toggleMenu);
-navList.addEventListener('click', closeMenu);
 
 
 
