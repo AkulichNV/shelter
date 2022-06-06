@@ -365,7 +365,7 @@
     top: 0px;
     width: 100%;
     height: 1000px;
-    z-index: 20000;
+    z-index: 2000;
     left: 0px;
     overflow-y: hidden;
   }
@@ -384,6 +384,11 @@
   }
   .modal-js-close:hover {
     background: var(--color-primary);
+  }
+  .stop-scroll {
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
   }
   .stop-scrolling {
     height: 100%;
@@ -660,6 +665,7 @@
       -webkit-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
+      
     }
     .line {
       width: 30px;
@@ -669,7 +675,7 @@
       transition: all 0.2s ease-in-out;
     }
     .hamburger.open {
-      
+      z-index: 2002;
       position: absolute;
       right: 56px;
       top: 19px;
@@ -678,11 +684,22 @@
       -o-transform: rotate(90deg);
       transform: rotate(90deg);
     }
+    .overlay {
+      background: #292929;
+      opacity: 60%;
+      position: fixed;
+      top: 0px;
+      width: 100%;
+      height: 1000px;
+      /* z-index: 0; */
+      left: 0px;
+      overflow-y: hidden;
+    }
     .nav-list {
-      position: absolute;
+      position: fixed;
       margin: 0;
       padding: 0;
-      top: -30px; /*?????*/
+      top: -30px; 
       padding-top: 248px;
       right: -325px;
       width: 320px;
@@ -690,9 +707,11 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      height: 100vh;
+      height: 150%;
       transition: right 0.1s ease-in;
       gap: 41px;
+      opacity: 1;
+      z-index: 20000;
     }
     .nav-list.open {
       display: flex;
@@ -708,7 +727,7 @@
     .nav-link { 
       opacity: 1;
       margin-left: -2px;
-
+      z-index: 2002;
       margin-bottom: 16px;
       /* top: 0; */
       font-family: 'Arial';
@@ -721,13 +740,13 @@
     .active {
       padding-bottom: 7px;
     }
-    .logo.open {
-      z-index: 10;
-      position: absolute;
-      right: 126px;
-      top: 0px;
-      /* margin-right: 0; */
-      transition: all 0.5s ease-in-out;
+    .header-container.open {
+      justify-content: flex-end;
+      gap: 73px;
+    }
+    .header-container.open > .logo {
+      z-index: 2002;
+      transition: all 0.2s ease-in-out;
     }
 
 
@@ -737,7 +756,7 @@
     }
     .header-container {
       padding-left: 3%;
-      padding-right: 16.5%;
+      padding-right: 53px;
       margin-top: 30px;
       
     }
