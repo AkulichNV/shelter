@@ -23,6 +23,7 @@
   
   html {
     scroll-behavior: smooth; 
+    scrollbar-width: none;
   }
   *, ::before, ::after {
     box-sizing: inherit;
@@ -285,6 +286,9 @@
     align-items: flex-start;
   }
   .card {
+    display: none;
+  }
+  .card.show {
     background-color: var(--color-light-s);
     display: flex;
     flex-direction: column;
@@ -332,7 +336,97 @@
   .pets-container > form > .button-primary {
     width: 261px;
   }
+
+  /* Popup */
+  .modal {
+    position: fixed;
+    display: none;
+    background-color: var(--color-light-s);
+    z-index: 60000;
+    min-height: 100px;
+    left: 25%;
+    box-sizing: border-box;
+    width: 900px;
+    height: 500px;
+    top: 25%;
+    border-radius: 9px;
+    justify-content: flex-start;
+  }
+  .modal.on {
+    display: flex;
+  }
+  .modal.on:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  }
+  .modal-js-overlay {
+    background: #292929;
+    opacity: 60%;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 1000px;
+    z-index: 20000;
+    left: 0px;
+    overflow-y: hidden;
+  }
+  .modal-js-close {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+    height: 52px;
+    width: 52px;
+    padding: 16px 18px;
+    top: -52px;
+    right: -52px;
+    cursor: pointer;
+  }
+  .modal-js-close:hover {
+    background: var(--color-primary);
+  }
+  .stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
+  .popup-img {
+    height: 100%;
+    border-radius: 0 9px 0 9px;
+  }
+  .popup-name {
+    margin-top: 50px;
+    margin-left: 29px;
+    color: #000000;
+  }
+  .popup-type {
+    margin-top: 10px;
+    margin-left: 29px;
+    color: #000000;
+  }
+  .popup-description {
+    margin-top: 40px;
+    margin-left: 29px;
+    margin-right: 20px;
+    color: #000000;
+  }
+  .popup-extra {
+    margin-top: 40px;
+    margin-left: 6px;
+    list-style: none;
+  }
+  .popup-extra li {
+    margin-bottom: 10px;
+  }
+  .popup-extra li::before {
+    content: "\2022";
+    color: var(--color-primary);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
   
+  /* Help section */
   .help-section {
     background-color: var(--color-light-xl);
   }
@@ -513,9 +607,9 @@
     .pets-cards {
       gap: 40px;
     }
-    .card:nth-child(3) {
+    /* .card:nth-child(3) {
       display: none;
-    }
+    } */
     .help-list {
       /* align-content: stretch; */
       /* grid-template-rows: none; */
@@ -711,9 +805,9 @@
       order: 1;
       gap: 0px;
     }
-    .card:nth-child(2), .card:nth-child(3) {
+    /* .card:nth-child(2), .card:nth-child(3) {
       display: none;
-    }
+    } */
     .help-container {
       padding-top: 13.1%;
       padding-bottom: 13.1%;

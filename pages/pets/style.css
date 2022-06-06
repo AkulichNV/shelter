@@ -109,6 +109,9 @@
     margin-top: 10px;
     margin-left: 4px;
   }
+  .hamburger {
+    display: none;
+  }
   .nav {
     z-index: 1;
     margin-left: auto;
@@ -141,6 +144,10 @@
     padding-bottom: 3px;
     color: var(--color-dark-3xl);
   }
+
+
+
+  /* Pets Section */
   .pets-section {
     background-color: var(--color-light-l);
 }
@@ -237,6 +244,15 @@
   .pets-navigation > .button-paginator-left:disabled > h4 {
     color: var(--color-dark-s);
   }
+
+  .button-paginator-right:disabled {
+    border: 2px solid var(--color-dark-s);
+    cursor: default;
+    pointer-events: none;
+  }
+  .pets-navigation > .button-paginator-right:disabled > h4 {
+    color: var(--color-dark-s);
+  }
   .button-paginator-right:hover {
     background-color: var(--color-primary-light);
     border: 2px solid var(--color-primary-light);
@@ -298,6 +314,95 @@
     margin-right: 5x;
   }
 
+  /* Popup */
+  .modal {
+    position: fixed;
+    display: none;
+    background-color: var(--color-light-s);
+    z-index: 60000;
+    min-height: 100px;
+    left: 25%;
+    box-sizing: border-box;
+    width: 900px;
+    height: 500px;
+    top: 25%;
+    border-radius: 9px;
+    justify-content: flex-start;
+  }
+  .modal.on {
+    display: flex;
+  }
+  .modal.on:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  }
+  .modal-js-overlay {
+    background: #292929;
+    opacity: 60%;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 1000px;
+    z-index: 20000;
+    left: 0px;
+    overflow-y: hidden;
+  }
+  .modal-js-close {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+    height: 52px;
+    width: 52px;
+    padding: 16px 18px;
+    top: -52px;
+    right: -52px;
+    cursor: pointer;
+  }
+  .modal-js-close:hover {
+    background: var(--color-primary);
+  }
+  .stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
+  .popup-img {
+    height: 100%;
+    border-radius: 0 9px 0 9px;
+  }
+  .popup-name {
+    margin-top: 50px;
+    margin-left: 29px;
+    color: #000000;
+  }
+  .popup-type {
+    margin-top: 10px;
+    margin-left: 29px;
+    color: #000000;
+  }
+  .popup-description {
+    margin-top: 40px;
+    margin-left: 29px;
+    margin-right: 20px;
+    color: #000000;
+  }
+  .popup-extra {
+    margin-top: 40px;
+    margin-left: 6px;
+    list-style: none;
+  }
+  .popup-extra li {
+    margin-bottom: 10px;
+  }
+  .popup-extra li::before {
+    content: "\2022";
+    color: var(--color-primary);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
   @media (min-width: 768px) and (max-width: 1279px) {
     .header-container {
       padding-left: 30px;
@@ -357,9 +462,13 @@
       height: 2px;
       background: #000000;
       z-index: 15;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
     .hamburger.open {
+      
+      position: absolute;
+      right: 56px;
+      top: 49px;
       -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
       -o-transform: rotate(90deg);
@@ -369,29 +478,52 @@
       position: absolute;
       margin: 0;
       padding: 0;
-      top: 0;
-      padding-top: 134px;
-      right: -625px;
-      width: 620px;
-      background-color: #000000;
+      top: -30px; /*?????*/
+      padding-top: 248px;
+      right: -325px;
+      width: 320px;
+      background-color: var(--color-light-l);
       flex-direction: column;
       justify-content: flex-start;
-      align-items: flex-start;
-      height: calc(100vh - 90px);
-      transition: right 0.5s ease-in;
-      gap: 0;
+      align-items: center;
+      height: 100vh;
+      transition: right 0.1s ease-in;
+      gap: 41px;
     }
     .nav-list.open {
-      position: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      position: absolute;
       right: 0;
-      width: 620px;
-      height: 100%;
+      width: 320px;
+      height: 515px;
+      top: -30px;
     }
-    .nav-item { 
+    .nav-link { 
       opacity: 1;
-      margin-left: 127px;
+      margin-left: -2px;
       margin-bottom: 16px;
+      /* top: 0; */
+      font-family: 'Arial';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 160%;
+
     } 
+    .active {
+      padding-bottom: 7px;
+    }
+    .logo.open {
+      z-index: 10;
+      position: absolute;
+      right: 126px;
+      top: 30px;
+      /* margin-right: 0; */
+      transition: all 0.5s ease-in-out;
+    }
 
 
     .container {
@@ -458,3 +590,8 @@
       min-width: 260px;
     }
   }
+
+  .stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
