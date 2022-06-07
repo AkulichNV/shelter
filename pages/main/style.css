@@ -344,11 +344,11 @@
     background-color: var(--color-light-s);
     z-index: 60000;
     min-height: 100px;
-    left: 25%;
+    left: 20%;
     box-sizing: border-box;
     width: 900px;
-    height: 500px;
-    top: 25%;
+    /* height: 500px; */
+    top: 17%;
     border-radius: 9px;
     justify-content: flex-start;
   }
@@ -395,7 +395,8 @@
     overflow: hidden;
   }
   .popup-img {
-    height: 100%;
+    width: 500px;
+    height: 500px;
     border-radius: 0 9px 0 9px;
   }
   .popup-name {
@@ -641,6 +642,37 @@
     .location1 {
       margin-top: 32px;
     }
+    /* Popup */
+    .modal {
+      left: 10%;
+      width: 630px;
+      /* height: 350px; */
+    }
+    .popup-img {
+      width: 350px;
+      height: 350px;
+    }
+    .popup-name {
+      margin-top: 10px;
+      margin-left: 11px;
+    }
+    .popup-type {
+      margin-top: 10px;
+      margin-left: 11px;
+    }
+    .popup-description {
+      margin-top: 20px;
+      margin-left: 11px;
+      margin-right: 9px;
+      font-size: 13px;
+    }
+    .popup-extra {
+      margin-top: 20px;
+      margin-left: -10px;
+    }
+    .popup-extra li {
+      margin-bottom: 5px;
+    }
   } 
 
   @media (max-width: 767px) {
@@ -821,6 +853,9 @@
       row-gap: 20px;
     }
     .pets-cards {
+      flex: 0 1 100%;
+      /* display: inline-block; */
+      justify-content: center;
       order: 1;
       gap: 0px;
     }
@@ -910,5 +945,40 @@
       /* margin-top: 14px; */
       padding: 17px 25px 0 30px;
       min-width: 260px;
+    }
+    /* Popup */
+    .modal {
+      left: 10%;
+      width: 240px;
+      /* height: 341px; */
+    }
+    .popup-img {
+      display: none;
+    }
+    .popup-name {
+      margin-top: 10px;
+      margin-left: 11px;
+      font-size: 35px;
+    }
+    .popup-type {
+      margin-top: 10px;
+      margin-left: 11px;
+      font-size: 20px;
+      text-align: center;
+    }
+    .popup-description {
+      margin-top: 20px;
+      margin-left: 11px;
+      margin-right: 9px;
+      font-size: 13px;
+      text-align: justify;
+    }
+    .popup-extra {
+      margin-top: 20px;
+      margin-left: -10px;
+    }
+    .popup-extra li {
+      margin-bottom: 5px;
+      font-size: 15px;
     }
   }
