@@ -854,7 +854,6 @@
     }
     .pets-cards {
       flex: 0 1 100%;
-      /* display: inline-block; */
       justify-content: center;
       order: 1;
       gap: 0px;
