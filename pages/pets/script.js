@@ -1,3 +1,5 @@
+"use strict";
+
 // burger menu
 const hamburger = document.querySelector('.hamburger');
 const navList = document.querySelector('.nav-list');
@@ -8,7 +10,7 @@ let bg = document.createElement("div");
     bg.className = "overlay";
 let overlay = document.getElementsByClassName("overlay");
 
-    // delete popup to click on grey zone
+    // delete menu to clicking on grey zone
     bg.addEventListener("click", (e) => {
         navList.classList.remove('open');
         hamburger.classList.remove('open');
@@ -32,7 +34,19 @@ function toggleMenu() {
 
 }
 
+// close burger menu when clicking on a link
+function closeMenu(event) {
+    if (event.target.classList.contains('nav-link')) {
+        navList.classList.remove('open');
+        hamburger.classList.remove('open');
+        logo.classList.remove('open');
+        body.removeChild(bg);
+        document.body.classList.remove("stop-scroll");
+      }
+}
+
 hamburger.addEventListener('click', toggleMenu);
+navList.addEventListener('click', closeMenu);
 
 
 
